@@ -1,0 +1,31 @@
+import 'dart:io';
+
+void main() {
+  
+  
+int count = 0;
+
+String dragozennosti = stdin.readLineSync() as String;
+String kamni = stdin.readLineSync() as String;  
+
+var dragozennostiSplit = dragozennosti.split('');
+var  bufferList = Set<String>();
+List<String> dragozennostiUniqueList = dragozennostiSplit.where((element) => bufferList.add(element)).toList(); 
+var kamniSplit = kamni.split('');
+
+  for (int i=0;i<kamniSplit.length;++i) {
+    for (int j=0;j<dragozennostiUniqueList.length;++j) 
+    {
+      
+      if (kamniSplit[i] == dragozennostiUniqueList[j]) 
+      {count = count+1;
+      
+      } 
+    
+  }
+
+    
+  
+}
+     stdout.write(count);
+}
